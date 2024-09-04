@@ -2,18 +2,18 @@ from message import Message
 from exceptions import BankingException, InvalidAccountNumberException
 
 
-message = Message()
 
 class User:
     def __init__(self, name, accounts):
         self.name = name
         self.accounts = accounts
+        self.message = Message()
 
     def show_accounts(self):
-        message.print("{:<20}{:<0}".format("Account Number", "Amount"))
+        self.message.print("{:<20}{:<0}".format("Account Number", "Amount"))
         for key,val in self.accounts.items():
             balance = val.check_balance()
-            message.print("{:<20}{:<0}".format(key, balance))
+            self.message.print("{:<20}{:<0}".format(key, balance))
 
     
     def deposit(self, args):
@@ -28,9 +28,9 @@ class User:
             account.deposit(amount)
             return account.check_balance()
         except BankingException as e:
-            message.print(e.message())
+            self.message.print(e.message())
         except:
-            message.print("An error occurred")
+            self.message.print("An error occurred")
 
     def withdraw(self, args):
         try:
@@ -44,9 +44,9 @@ class User:
             account.withdraw(amount)
             return account.check_balance()
         except BankingException as e:
-            message.print(e.message())
+            self.message.print(e.message())
         except:
-            message.print("An error occurred")
+            self.message.print("An error occurred")
 
 
     def transfer(self, args):
