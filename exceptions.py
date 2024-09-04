@@ -1,10 +1,10 @@
-class BankingExcpetion(Exception):
+class BankingException(Exception):
     pass
 
-class InsufficientFundsException(BankingExcpetion):
+class InsufficientFundsException(BankingException):
     def message(self):
         return 'An error occurred: Insufficent Funds'
 
-class InvalidAccountNumberException(BankingExcpetion):
+class InvalidAccountNumberException(BankingException):
     def message(self):
         return "An error occurred: Invalid Account Number"

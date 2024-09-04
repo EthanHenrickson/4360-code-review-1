@@ -1,5 +1,5 @@
 from message import Message
-from exceptions import BankingExcpetion, InvalidAccountNumberException
+from exceptions import BankingException, InvalidAccountNumberException
 
 
 message = Message()
@@ -27,7 +27,7 @@ class User:
 
             account.deposit(amount)
             return account.check_balance()
-        except BankingExcpetion as e:
+        except BankingException as e:
             message.print(e.message())
         except:
             message.print("An error occurred")
@@ -43,7 +43,7 @@ class User:
 
             account.withdraw(amount)
             return account.check_balance()
-        except BankingExcpetion as e:
+        except BankingException as e:
             message.print(e.message())
         except:
             message.print("An error occurred")
