@@ -12,3 +12,4 @@ class InvalidAccountNumberException(BankingException):
 class InvalidMoneyType(BankingException):
     def message(self):
         return "An error occurred: Can't deposit less than $0"
+    

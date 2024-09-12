@@ -1,5 +1,5 @@
 from message import Message
-from exceptions import BankingException, InvalidAccountNumberException
+from exceptions import BankingException, InvalidAccountNumberException, InvalidMoneyType
 
 
 
@@ -59,6 +59,9 @@ class User:
 
         if not account1 or not account2:
             raise InvalidAccountNumberException
+        
+        if (amount < 0):
+            raise InvalidMoneyType
 
         account1.withdraw(amount)
         account2.deposit(amount)
