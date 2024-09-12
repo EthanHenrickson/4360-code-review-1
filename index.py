@@ -1,4 +1,5 @@
 import os
+import sys
 from message import Message
 from interface import UserInterface
 from user import User
@@ -16,10 +17,11 @@ def main():
     failedAttempt = False
     while login_attempts < 3:
         os.system('cls')
-        if failedAttempt:
-            message.print("please try again")
-        message.print("Welcome to the bank of Py!")
-        message.print("please login to continue.")
+        if not failedAttempt:
+            message.print("Welcome to the bank of Py!")
+            message.print("Please login to continue.")
+        else:
+            message.print("Please try again.")
 
         userName = input("Username: ")
         password = input("Password: ")
