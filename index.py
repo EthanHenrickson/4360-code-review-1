@@ -41,7 +41,8 @@ def main():
     ui.register_command("deposit", user.deposit, "deposit [accountNumber] [amount] - deposit an amount into an account")
     ui.register_command("withdraw", user.withdraw, "withdraw [accountNumber] [amount] - withdraw an amount from an account")
     ui.register_command("transfer", user.transfer, " transfer [fromAccountNumber] [toAccountNumber] [amount] - transfer an amount from one account to another account")
-
+    ui.register_command("exit", None, "Closes the bank.")
+    
     #Main Loop
     while True:
         os.system('cls')
