@@ -8,3 +8,7 @@ class InsufficientFundsException(BankingException):
 class InvalidAccountNumberException(BankingException):
     def message(self):
         return "An error occurred: Invalid Account Number"
+    
+class InvalidMoneyType(BankingException):
+    def message(self):
+        return "An error occurred: Can't deposit less than $0"

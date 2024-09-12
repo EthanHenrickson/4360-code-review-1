@@ -1,4 +1,4 @@
-from exceptions import InsufficientFundsException
+from exceptions import InsufficientFundsException, InvalidMoneyType
 
 class Account:
     def __init__(self, balance):
@@ -15,6 +15,8 @@ class Account:
             raise InsufficientFundsException
     
     def deposit(self, amount):
+        if(amount < 0):
+            raise InvalidMoneyType
         self.balance += amount
         return self.balance
 
