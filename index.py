@@ -22,7 +22,7 @@ def main():
         message.print("please login to continue.")
 
         userName = input("Username: ")
-        password = input("password")
+        password = input("Password: ")
 
         user = auth.login(userName, password)
         if not user:
