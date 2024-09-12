@@ -33,6 +33,10 @@ def main():
         else:
             break
 
+    if(login_attempts >= 3):
+        print("Sorry too many failed log in attempts. Try again later.")
+        sys.exit()
+
     #register UI
     ui.register_command("deposit", user.deposit, "deposit [accountNumber] [amount] - deposit an amount into an account")
     ui.register_command("withdraw", user.withdraw, "withdraw [accountNumber] [amount] - withdraw an amount from an account")
