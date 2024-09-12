@@ -7,7 +7,7 @@ class Auth:
     def __init__(self):
         self.message = Message()
 
-    def login_again(self, username, password):
+    def login(self, username, password):
         with open('db.json', 'r') as file:
             users = json.load(file)['users']
 
